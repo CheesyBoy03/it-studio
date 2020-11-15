@@ -1,6 +1,66 @@
+//      MIXINS
+
+@mixin banner-margin()
+    
+//      MIXINS
+
+$weight-border: 1px
+
+//      MAIN STYLES
 header
     width: 100%
     height: 85vh
     max-height: 900px
-    border: 1px solid red
     background-image: url('../../img/back.png')
+    background-position: center
+
+    .header-content
+        width: 70%
+        height: 100%
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        max-width: 1300px
+        margin: auto
+
+        nav
+            display: flex
+            justify-content: flex-end
+
+            .links
+                width: 50%
+                display: flex
+                justify-content: space-between
+
+            a
+                padding: 40px 20px
+                border-bottom: 1px solid rgba(0, 0, 0, 0)
+
+                &:hover
+                    padding-bottom: 40px-$weight-border
+                    border-bottom: $weight-border solid
+    
+        .header-banner
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center 
+            height: 100%
+
+            .header-banner-text
+                height: 40%
+                display: flex
+                flex-direction: column
+                justify-content: space-around
+                align-items: center
+                
+                .main-text
+                    text-align: center
+                    font-weight: 500
+                    font-size: 1.5em
+
+                .header-link
+                    padding: 15px 30px
+                    border-radius: 50px
+                    background-color: #4985FF
+//      MAIN STYLES                
