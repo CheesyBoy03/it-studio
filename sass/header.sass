@@ -1,66 +1,102 @@
-//      MIXINS
-
-@mixin banner-margin()
-    
-//      MIXINS
-
 $weight-border: 1px
+$full: 100%
 
 //      MAIN STYLES
 header
     width: 100%
     height: 85vh
     max-height: 900px
-    background-image: url('../../img/back.png')
-    background-position: center
+    background:
+        color: #b6b6b6
+        image: url('../../img/back.png') 
+        position: center
+
 
     .header-content
         width: 70%
-        height: 100%
+        height: $full
         display: flex
         flex-direction: column
         justify-content: space-between
         max-width: 1300px
         margin: auto
-
         nav
             display: flex
             justify-content: flex-end
-
             .links
-                width: 50%
+                width: $full/2
                 display: flex
                 justify-content: space-between
+                a
+                    padding: 40px 2%
+                    border-bottom: $weight-border solid rgba(0, 0, 0, 0)
+                    &:hover
+                        padding-bottom: 40px-$weight-border
+                        border-bottom: $weight-border solid
 
-            a
-                padding: 40px 20px
-                border-bottom: 1px solid rgba(0, 0, 0, 0)
-
-                &:hover
-                    padding-bottom: 40px-$weight-border
-                    border-bottom: $weight-border solid
-    
+        .mobile-menu
+            display: none
+            justify-content: flex-end
+            padding-top: 40px
+            font-size: 2em
+            .burger
+                width: 40px
+                height: 40px
+                text-align: center
+                //padding: 20px
+                border-radius: 50%
+                border: $weight-border solid #fff
         .header-banner
             display: flex
             flex-direction: column
             justify-content: center
             align-items: center 
-            height: 100%
-
+            height: $full
             .header-banner-text
                 height: 40%
                 display: flex
                 flex-direction: column
                 justify-content: space-around
                 align-items: center
-                
                 .main-text
                     text-align: center
                     font-weight: 500
                     font-size: 1.5em
-
                 .header-link
                     padding: 15px 30px
                     border-radius: 50px
                     background-color: #4985FF
+    
+    //  MEDIA
+    @media screen and ( max-width: 1024px )
+        .header-content
+            .header-banner
+                .header-banner-text
+                    h1
+                        font-size: 1.3em
+
+    @media screen and ( max-width: 800px )
+        .header-content
+            nav
+                .links
+                    a
+                        padding: 40px 3%
+                        font-size: 0.8em
+
+
+    @media screen and ( max-width: 500px )
+        .header-content
+            width: 85%
+            nav
+                .links
+                    display: none
+            .mobile-menu
+                display: flex
+            .header-banner
+                width: 100%
+                .header-banner-text
+                    font-size: 0.8em
+                .header-link
+                    padding: 5px 10px
+    //  MEDIA
 //      MAIN STYLES                

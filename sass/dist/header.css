@@ -2,6 +2,7 @@ header {
   width: 100%;
   height: 85vh;
   max-height: 900px;
+  background-color: #b6b6b6;
   background-image: url("../../img/back.png");
   background-position: center;
 }
@@ -23,13 +24,26 @@ header .header-content nav .links {
   display: flex;
   justify-content: space-between;
 }
-header .header-content nav a {
-  padding: 40px 20px;
+header .header-content nav .links a {
+  padding: 40px 2%;
   border-bottom: 1px solid rgba(0, 0, 0, 0);
 }
-header .header-content nav a:hover {
+header .header-content nav .links a:hover {
   padding-bottom: 40px- 1px;
   border-bottom: 1px solid;
+}
+header .header-content .mobile-menu {
+  display: none;
+  justify-content: flex-end;
+  padding-top: 40px;
+  font-size: 2em;
+}
+header .header-content .mobile-menu .burger {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #fff;
 }
 header .header-content .header-banner {
   display: flex;
@@ -54,4 +68,35 @@ header .header-content .header-banner .header-banner-text .header-link {
   padding: 15px 30px;
   border-radius: 50px;
   background-color: #4985FF;
+}
+@media screen and (max-width: 1024px) {
+  header .header-content .header-banner .header-banner-text h1 {
+    font-size: 1.3em;
+  }
+}
+@media screen and (max-width: 800px) {
+  header .header-content nav .links a {
+    padding: 40px 3%;
+    font-size: 0.8em;
+  }
+}
+@media screen and (max-width: 500px) {
+  header .header-content {
+    width: 85%;
+  }
+  header .header-content nav .links {
+    display: none;
+  }
+  header .header-content .mobile-menu {
+    display: flex;
+  }
+  header .header-content .header-banner {
+    width: 100%;
+  }
+  header .header-content .header-banner .header-banner-text {
+    font-size: 0.8em;
+  }
+  header .header-content .header-banner .header-link {
+    padding: 5px 10px;
+  }
 }
